@@ -32,11 +32,11 @@ Gem::Specification.new do |spec|
   spec.add_development_dependency 'bundler', '~> 1.16'
   spec.add_development_dependency 'minitest', '~> 5.0'
   spec.add_development_dependency 'pry', '~> 0.11'
+  spec.add_development_dependency 'pry-byebug'
   spec.add_development_dependency 'rake', '~> 10.0'
   spec.add_development_dependency 'redis', '~> 4.0'
 
   spec.add_dependency 'activesupport', '~> 5.2'
   spec.add_dependency 'bunny', '~> 2.9'
   spec.add_dependency 'hashie', '~> 3.5'
-  spec.add_dependency 'resque', '~> 1.27'
 end

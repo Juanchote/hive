@@ -1,21 +1,20 @@
+# frozen_string_literal: true
 require 'hive/workers/components/base'
+require 'redis'
 
 module Hive
   module Workers
     class Handler
 
-      def self.call(queue, type, exchange="")
-        set_component(type).perform(queue, exchange)
+      def self.call(queue, exchange= '')
+        get_component
+          .call(queue, exchange)
       end
 
-      def self.async_call(queue, type, exchange="")
-        Resque.enqueue(set_component(type),queue, exchange)
-      end
-
-      private
-
-      def self.set_component(type)
-        "Hive::Workers::Components::#{type.capitalize}".constantize
+      class << self
+        def get_component
+          Hive::Workers::Components::Base
+        end
       end
     end
   end

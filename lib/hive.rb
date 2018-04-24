@@ -1,7 +1,5 @@
-require 'resque'
 require 'hashie'
 require 'active_support/inflector'
-require 'pry'
 
 require 'hive/version'
 require 'hive/workers/handler'

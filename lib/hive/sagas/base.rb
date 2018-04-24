@@ -1,3 +1,6 @@
+require 'hive/sagas/deliver_issue_saga'
+require 'hive/sagas/unit'
+
 module Hive
   module Sagas
     class Base

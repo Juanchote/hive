@@ -1,0 +1,11 @@
+version: '3'
+services:
+  rabbit:
+    image: rabbitmq:3-management
+    hostname: rabbitmq
+    ports:
+     - 5672:5672
+  es:
+    image: redis:latest
+    ports:
+     - 6379:6379

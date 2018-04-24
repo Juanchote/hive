@@ -3,6 +3,12 @@
 require "bundler/setup"
 require "hive"
 
+begin
+  require 'pry'
+  Pry.config.should_load_plugins = true
+rescue LoadError
+  puts 'Error loading pry'
+end
 # You can add fixtures and/or initialization code here to make experimenting
 # with your gem easier. You can also use a different console, if you like.
 
@@ -10,5 +16,6 @@ require "hive"
 # require "pry"
 # Pry.start
 
-require "irb"
-IRB.start(__FILE__)
+#require "irb"
+#Pry.start(__FILE__)
+Pry.start
